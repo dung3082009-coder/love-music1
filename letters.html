@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lời tâm sự 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffb3c6, #ffffff, #4dabf7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-weight: bold;
+      color: #ff4d6d;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .letter {
+      background: white;
+      border-radius: 24px;
+      padding: 24px;
+      max-width: 500px;
+      animation: pop 0.4s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      margin-top: 16px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .back {
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      color: #4dabf7;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Gửi người tớ thương 💖</h1>
+
+    <div class="cards">
+      <div class="card" onclick="openLetter('valentine')">
+        <div class="icon">💝</div>
+        <div class="card-title">Thiệp Valentine</div>
+      </div>
+
+      <div class="card" onclick="openLetter('heart')">
+        <div class="icon">❤️</div>
+        <div class="card-title">Lời thủ thỉ</div>
+      </div>
+    </div>
+
+    <a href="index.html" class="back">← Quay lại trang nhạc</a>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="letter" id="letter"></div>
+  </div>
+
+  <script>
+    const letters = {
+      valentine: `
+        <h2>Happy Valentine 💕</h2>
+        <p>
+        Cảm ơn cậu vì đã đến bên tớ, ở lại và yêu tớ theo cách dịu dàng nhất.
+        Dù có lúc buồn, lúc giận, nhưng chỉ cần nghĩ đến cậu,
+        tớ lại thấy mọi thứ đều đáng để cố gắng.
+        </p>
+        <p>
+        Valentine này và cả những Valentine sau nữa,
+        tớ mong người ở bên cạnh cậu vẫn là tớ 💖
+        </p>
+        <button class="close" onclick="closeLetter()">Đóng</button>
+      `,
+      heart: `
+        <h2>Gửi tình iu đời tớ ❤️</h2>
+        <p>
+        Có thể tớ không nói giỏi,
+        nhưng tớ thật sự thương cậu rất nhiều.
+        </p>
+        <p>
+        Những lúc cậu mệt, cậu buồn,
+        chỉ cần nhớ rằng ở đâu đó luôn có một người
+        mong cậu được bình yên và mỉm cười.
+        </p>
+        <p>
+        Nếu được chọn lại,
+        tớ vẫn sẽ chọn cậu — không do dự.
+        </p>
+        <p>
+            Có những lúc tớ nghĩ rất nhiều và nhận ra rằng tớ đã đem đến cho cậu không ít nỗi buồn, phiền lòng. Trong khi đó, người luôn dung thứ, bỏ qua tất cả và níu giữ mối quan hệ này lại là cậu. Tớ biết ơn điều đó nhiều lắm, và tớ cũng muốn hứa rằng tớ sẽ cố gắng thay đổi, cố gắng trưởng thành hơn để không làm cậu phải buồn thêm lần nào nữa.
+        </p>
+        <p>
+            Chúng mình mới 17 tuổi, còn rất nhiều ước mơ phía trước. Du học không chỉ là ước mơ của riêng cậu hay riêng tớ, mà là điều để cả hai cùng nỗ lực. Cậu chọn Đài Loan, tớ chọn Nga, mỗi người một hướng nhưng cùng chung một quyết tâm. Tớ sẽ cố gắng hết mình, 9 tháng nữa tớ sẽ apply, và tớ tin cậu cũng sẽ làm được điều cậu mong muốn. Rồi một ngày nào đó, chúng mình sẽ cùng phượt với nhau bằng một chiếc xe bốn bánh mui trần, ngắm tháp ở Paris, nhìn tuyết rơi đâu đó trên bầu trời châu Âu, và dắt tay nhau đi xuyên qua nhiều châu lục, nhiều đất nước. Chúc cậu luôn mạnh mẽ, vững vàng trên con đường đã chọn, và chúc cho chúng mình – dù ở đâu – vẫn đủ tin, đủ kiên trì để cùng nhau đi thật xa.
+        </p>
+
+        <button class="close" onclick="closeLetter()">Đóng</button>
+      `
+    };
+
+    function openLetter(type) {
+      document.getElementById('letter').innerHTML = letters[type];
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function closeLetter() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+  <script>
+  if (sessionStorage.getItem("unlocked") === "yes") {
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("passwordScreen").style.display = "none";
+      document.getElementById("protectedContent").style.display = "block";
+    });
+  }
+</script>
+
+<script>
+  const correctPassword = "toiucau";
+
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+
+    if (input === correctPassword) {
+      sessionStorage.setItem("unlocked", "yes"); // 👈 nhớ đã mở
+      document.getElementById("passwordScreen").style.display = "none";
+      document.getElementById("protectedContent").style.display = "block";
+    } else {
+      document.getElementById("error").style.display = "block";
+    }
+  }
+</script>
+</body>
+</html>

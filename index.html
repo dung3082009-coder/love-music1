@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love 💖</title>
+  <style>
+    :root {
+      --red: #ff4d6d;
+      --pink: #ffb3c6;
+      --white: #ffffff;
+      --blue: #4dabf7;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--pink), var(--white), var(--blue));
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 24px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+
+    .lang-toggle {
+      margin-bottom: 16px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 8px 14px;
+      margin: 4px;
+      cursor: pointer;
+      background: var(--pink);
+      color: #333;
+      font-weight: bold;
+    }
+
+    button.active {
+      background: var(--red);
+      color: white;
+    }
+
+    .message {
+      margin: 16px 0;
+      color: #444;
+    }
+
+    .song {
+      background: #fff;
+      border-radius: 16px;
+      padding: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .song-title {
+      color: var(--red);
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    footer {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div id="passwordScreen" style="
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffb3c6, #ffffff, #4dabf7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+  <div style="
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 320px;
+  ">
+    <h2 style="color:#ff4d6d;">💖 Trang riêng tư 💖</h2>
+    <p>Nhập mật khẩu để vào nha</p>
+    <input id="passwordInput" type="password" placeholder="Pass này chỉ tặng ngừi tớ thương thoi nà"
+      style="padding:10px; width:100%; border-radius:10px; border:1px solid #ccc; margin-bottom:12px;">
+    <button onclick="checkPassword()"
+      style="padding:10px 16px; border:none; border-radius:999px;
+      background:#ff4d6d; color:white; font-weight:bold;">
+      Vào nè 💌
+    </button>
+    <p id="error" style="color:red; display:none; margin-top:10px;">
+      Sai mật khẩu rùi 😢
+    </p>
+  </div>
+</div>
+
+  <div id="protectedContent" style="display:none;">
+  
+  <div class="card">
+    <h1 id="title">Gửi tình iu cụa tuiiii 💕</h1>
+
+    <div class="lang-toggle">
+      <button id="viBtn" class="active" onclick="setLang('vi')">🇻🇳 VI</button>
+      <button id="enBtn" onclick="setLang('en')">🇬🇧 EN</button>
+    </div>
+
+    <div class="message" id="message">
+      Khi cậu buồn, mệt mỏi hay nhớ tuiiii,
+      hãy mở trang này.
+      Tớ luôn ở đây, dù gần hay xa 💖
+    </div>
+
+    <!-- SONG LIST -->
+     <h3 id="title" style="color: deeppink;">🌱 Chữa lành – nghe xong thấy yêu đời lại xíu(chắc thí)</h3>
+
+<h3>💗Mượn rượu tỏ tình</h3>
+<div class="Music">
+  <iframe 
+    src="https://www.youtube.com/embed/aGUQsb31TEw?si=FDMj-gbYapdEQ9cV"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Yêu 5</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/y576-ONm5II?si=ABOfWinuv55Cs7kS"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Điều anh biết</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/ocjUUfk9k1Y?si=FgB62nS1XBNDEOoF"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+ <h3>💗 mình yêu nhau đi</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/Z1yAdLUI9LE?si=axv17iUfTtuUou5F"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗Bài này không để đi diễn</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/i0yxWxk_e20?si=5qc1HJfNSaqauU26"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 1234</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/JsFBT_CVjv8?si=iHDF3TnQGtqFUyAi"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Say you do</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/NJgXWBqSgPE?si=ZGjEcLFb0ysIClGh"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Mặt trời của em</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/BLOmk1686z4?si=jmP6jvEACclzimly"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+  <h3 id="title" style="color: darkslateblue;">🌿 Nhẹ nhàng – chắc 1 nửa gu cậu, còn lại gu tớ hay sao á</h3>
+<h3>💗 Lạ lùng</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/iWd5_0-LbAc?si=hdfAhDWyaMAAU3z_"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Bình yên</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/3dDei-1S1_Y?si=kxBp1as1hULwjf9h"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+
+
+<h3>💗 Vẫn nhớ</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/A6OqGvRHUCw?si=GyDmAdAu4l9OfQ-I"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Yêu là tha thu</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/-nnWBhKZeg0?si=HgDrG2BIBgKbky8z"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Dễ đến dễ đi</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/YV_U70X1Rsk?si=NdK4nY65RqWrMZ-W"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Anh chưa thương em đến vậy đâu</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/lIXdQ8riYmU?si=Y_NsHPNGbNBN84W5"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Đừng lo em đợi mà</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/hnfd5p7NUVg?si=Dc4mXPJmHWxzfnbn"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Mất kết nối</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/lRsaDQtYqAo?si=wT_5rdOzeLE6IXqf"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Bạn đời</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/B2n4An3pm8E?si=derKfKAH4b2MLR_U"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Lệ lưu ly</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/0tFUfuEhh28?si=8SrBNwo17y2MmxGp"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Anh khác hay em khác</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/LNv3V8zORKs?si=QYON7Q3f2DV7dX3w"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Rồi người thương cũng hóa người dưng</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/IGyA9CxWwbs?si=fszlbOXykEFa8Sv6"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Tình đầu</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/IDksv0Z-dTk?si=N1Q5u1JTLIOm-bph"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+  <h3>💗 Trước khi em tồn tại</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/jtFsZRHUyPE?si=x9AfJxUIL9ozrrh-"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗Em ơi lên phố</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/EHASipZkZnk?si=Emh88ckwBcmxYvSZ"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Em thua cô ta</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/gM0RQI7Ol_I?si=iwtVQO4tjAKrUoT9"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Chúng ta của tương lai</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/88gmFB111aY?si=NNaj6ewAwpgpGqDU"
+    allow="autoplay"
+  ></iframe>
+</div>
+<h3>💗 Cho em gần anh thêm chút nữa</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/Xn2Lm6AHW6Q?si=3MTtFQiafqEryfNT"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Lo người ướt áo</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/3gbjz23Sa1s?si=T6JgZIXGlSdOzeGY"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3 id="title" style="color: rgb(255, 0, 0);">💖Do you agree to spend the rest of your life with me? 💖</h3>
+  
+<h3>💗 Gấp đôi yêu thương</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/SRdew42ngnE?si=jmhqRbpUuZl8pz1N"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<h3>💗 Bên nhau cả đời</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/_9w0Br7XWU4?si=FVsD_ZWAozaXG7nI"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Có mình và ta</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/jalEBLBfWXo?si=sg2fJ7TM58sVgnUg"
+    allow="autoplay"
+  ></iframe>
+</div>
+<h3>💗 Cưới nhau đi(Yes I Do)</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/o_lN37OAJ9U?si=8EmQrFcCs36W1pb0"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Đúng người đúng thời điểm</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/2MZ_oQOGC24?si=MlgNl4JeBVj8joJE"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Em sẽ là cô dâu</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/9pqJT6xO3Ps?si=lMwEwWbWM-ZfFN_e"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Lễ đường</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/XqgyD0yadH0?si=baOO1n_OQ4sY8ZPf"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Mãi mãi bên nhau</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/8L7K6kwlB_A?si=MXBU-BsL-rhJGI0o"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Nắm lấy tay anh</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/Jdnmk4RO9kY?si=T_k4DratuJZI5XaA"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+<h3>💗 Thương em đến già</h3>
+
+<div class="music">
+  <iframe 
+    src="https://www.youtube.com/embed/mS7gPMK_6mA?si=mA2SKleBm1GoVSgr"
+    allow="autoplay"
+  ></iframe>
+</div>
+
+
+<a href="letters.html" style="
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #ff4d6d, #ffb3c6);
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+">
+  💌 Lời tớ muốn nói với cậu
+</a>
+
+    <footer>Made with ❤️ by someone who loves you</footer>
+  </div>
+
+  <script>
+    const texts = {
+      vi: {
+        title: 'Gửi cục cưng iu quý 💕',
+        message: 'Khi cậu buồn, mệt mỏi hay nhớ tui nèeee,\nhãy mở trang này và nghe nhạc nhé.\nTớ luôn ở đây, dù gần hay xa 💖'
+      },
+      en: {
+        title: 'For my love 💕',
+        message: 'Whenever you feel sad, tired, or miss me,\nopen this page and listen to the music.\nI am always here for you 💖'
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById('title').innerText = texts[lang].title;
+      document.getElementById('message').innerText = texts[lang].message;
+
+      document.getElementById('viBtn').classList.remove('active');
+      document.getElementById('enBtn').classList.remove('active');
+
+      document.getElementById(lang + 'Btn').classList.add('active');
+    }
+  </script>
+</div>
+<script>
+  if (sessionStorage.getItem("unlocked") === "yes") {
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("passwordScreen").style.display = "none";
+      document.getElementById("protectedContent").style.display = "block";
+    });
+  }
+</script>
+
+<script>
+  const correctPassword = "toiucau";
+
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+
+    if (input === correctPassword) {
+      sessionStorage.setItem("unlocked", "yes"); // 👈 nhớ đã mở
+      document.getElementById("passwordScreen").style.display = "none";
+      document.getElementById("protectedContent").style.display = "block";
+    } else {
+      document.getElementById("error").style.display = "block";
+    }
+  }
+</script>
+
+
+</body>
+</html>
