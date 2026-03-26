@@ -97,8 +97,80 @@
       font-weight: bold;
     }
   </style>
+   <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffb3c6, #fff, #4dabf7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h2 {
+      color: #ff4d6d;
+    }
+
+    textarea, input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #e63950;
+    }
+
+    .back {
+      margin-top: 15px;
+      display: block;
+      color: #555;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
+  <div class="box">
+  <h2>💌 Gửi tâm thư cho Queen (moahahaha)</h2>
+
+  <form id="myForm" action="https://formspree.io/f/xdaporjd" method="POST">
+  <input type="hidden" name="_next" value="https://dung3082009-coder.github.io/love-music1/thankyou.html">
+    <input type="text" name="name" placeholder="Tên của em 💗">
+    
+    <textarea name="message" rows="6" placeholder="Viết..." required></textarea>
+
+    <input type="text" name="image" placeholder="Link ảnh 💗">
+
+    <button type="submit">Gửi 💌</button>
+  </form>
+
+  <p id="successMessage" style="display:none; color:green;">
+    💖 Tớ đã nhận được rồi nhaaa
+  </p>
+</div>
   <div class="container">
     <h1>Gửi người tớ thương 💖</h1>
 
@@ -194,6 +266,13 @@
       document.getElementById("error").style.display = "block";
     }
   }
+</script>
+<script>
+  const form = document.getElementById("myForm");
+
+  form.addEventListener("submit", function() {
+    document.getElementById("successMessage").style.display = "block";
+  });
 </script>
 </body>
 </html>
